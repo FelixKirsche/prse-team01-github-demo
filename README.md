@@ -15,7 +15,8 @@ prse-team01-github-demo/
 │   ├── index.html       # Reveal.js-Einstiegspunkt, Theme und Plugins
 │   └── slides.md        # Präsentationsfolien in Markdown
 └── demo/                # C#-Anwendung für den GitHub-Workflow
-    ├── Demo.csproj      # .NET-10-Projektdatei
+    ├── Demo.slnx        # Solutiondatei
+    ├── Demo.csproj      # Projektdatei
     └── Program.cs       # Einstiegspunkt der Konsolenanwendung
 ```
 

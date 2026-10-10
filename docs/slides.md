@@ -9,19 +9,17 @@
 
 ---
 
-## Lokal vs. Remote – Zwei Ebenen der Versionsverwaltung
+## Lokal vs. Remote
 
-### 1. Lokales Repository
-- liegt **auf meinem PC**
-- dort bearbeite ich Dateien
-- dort mache ich meine **Commits**
+| Lokal (eigener PC) | Remote (GitHub) |
+|---|---|
+| Dateien bearbeiten | Gemeinsamer Code |
+| Commits erstellen | Commits austauschen |
+| Lokale Branches | Pull Requests & Reviews |
 
-### 2. Remote-Repository
-- liegt **auf GitHub**
-- dort sieht das Team den aktuellen Stand
-- dort gibt es **Issues, Pull Requests und Reviews**
+**Merksatz:**
 
-**Merksatz:** `commit = lokal speichern` · `push = zu GitHub hochladen` · `pull = von GitHub holen`
+`commit` → lokal speichern · `push` → hochladen · `pull` → herunterladen
 
 ---
 
