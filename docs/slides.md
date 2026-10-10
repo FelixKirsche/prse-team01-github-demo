@@ -9,6 +9,22 @@
 
 ---
 
+## Lokal vs. Remote – Zwei Ebenen der Versionsverwaltung
+
+### 1. Lokales Repository
+- liegt **auf meinem PC**
+- dort bearbeite ich Dateien
+- dort mache ich meine **Commits**
+
+### 2. Remote-Repository
+- liegt **auf GitHub**
+- dort sieht das Team den aktuellen Stand
+- dort gibt es **Issues, Pull Requests und Reviews**
+
+**Merksatz:** `commit = lokal speichern` · `push = zu GitHub hochladen` · `pull = von GitHub holen`
+
+---
+
 ## Lokales und Remote-Repository
 
 **Lokal (eigener PC)** ↔ **Remote (GitHub)**
@@ -131,3 +147,4 @@ git push
 # Live-Demo · C#/.NET
 
 **Issue → Clone → Branch → Code → Commit → Push → PR → Review → Merge**
+
