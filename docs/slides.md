@@ -9,78 +9,115 @@
 
 ---
 
-## Workflow
+## Werkzeuge für Git & GitHub
 
-**Issue → Branch → Commit → Push → Pull Request → Review → Merge**
+- **Git CLI:** Befehle im Terminal (PowerShell, CMD, Bash)
+- **IDE:** Git-Funktionen direkt in Visual Studio / IntelliJ
+- **GitHub Desktop:** grafische Oberfläche für Clone, Branches, Commits, Push und Pull Requests
+- **GitHub Web:** Issues, Pull Requests und Reviews
 
-- Arbeiten auf `feature/*` statt direkt auf `main`
-- Issue-Referenz in Commit/PR dokumentieren
-- Mindestens ein Review durch ein anderes Teammitglied
+<small>[Git CLI herunterladen](https://git-scm.com/downloads) · [GitHub Desktop herunterladen](https://desktop.github.com/)</small>
 
 ---
 
-## Git CLI · Grundlagen
+## Workflow: vom Issue zum Merge
+
+**Issue → Branch → Commit → Push → Pull Request → Review → Merge**
+
+- Für Features und Bugs ein **Issue / eine User Story / Task** anlegen
+- Änderungen auf `feature/*`, **nicht direkt auf `main`**
+- Commits und PRs mit dem Issue verknüpfen
+- Merge nach `main` erst nach **Review durch ein Teammitglied**
+
+---
+
+## Git CLI · Clone, Checkout & Branch
 
 ```bash
+# Repository lokal kopieren
 git clone https://github.com/OWNER/prse-team01-github-demo.git
 cd prse-team01-github-demo
+
+# Neuen Feature-Branch erstellen und wechseln
 git switch -c feature/hello-world
+
+# Zwischen bestehenden Branches wechseln
+git switch main
+# Klassische Alternative: git checkout main
+
 git status
-git add .
+```
+
+<small>`clone` = Repository herunterladen · `checkout` / `switch` = Branch bzw. Arbeitsstand wechseln</small>
+
+---
+
+## Git CLI · Commit, Push & Issue-Referenz
+
+```bash
+git switch feature/hello-world
+# demo/Program.cs bearbeiten
+
+git add demo/Program.cs
 git commit -m "Feature: add greeting | refs #1 | time: 30m"
 git push -u origin feature/hello-world
 ```
 
-<small>Git installieren: https://git-scm.com/downloads</small>
+- `refs #1`: Commit verweist auf **Issue / User Story / Task #1**
+- `Fixes #1` im **Pull-Request-Text** schließt das Issue beim Merge nach `main`
+- `time: 30m`: Beispiel für das in der LV geforderte Zeit-Tag
 
 ---
 
-## Pull Request & Merge
+## Pull Request & Review
 
 1. Auf GitHub **Compare & pull request** auswählen
-2. Issue referenzieren: `Fixes #1` (im PR-Text)
-3. Kolleg:in prüft den PR und gibt Review ab
-4. Merge nach `main` – nicht direkt auf `main` committen
-
-**CLI zur Synchronisation:**
+2. Änderungen beschreiben und Issue verlinken: `Fixes #1`
+3. Teammitglied prüft den Diff und gibt ein **Review** ab
+4. PR nach Freigabe nach `main` **mergen**
 
 ```bash
+# Lokalen main nach dem Merge aktualisieren
 git switch main
 git pull --ff-only origin main
 ```
+
+<small>PR = nachvollziehbare Änderung mit Diskussion, Review und Merge-Historie</small>
 
 ---
 
 ## Merge-Konflikt live lösen
 
-Zwei Branches ändern **dieselbe Zeile** in `demo/Program.cs`.
+**Szenario:** Zwei Branches ändern dieselbe Zeile in `demo/Program.cs`.
 
 ```bash
 git switch feature/hello-world
 git fetch origin
 git merge origin/main
-# Konfliktstellen in der IDE auflösen
+# Konfliktstellen in Program.cs manuell / in der IDE auflösen
 git add demo/Program.cs
 git commit
 git push
 ```
 
-<small>Alternative: Konflikt im Pull Request erkennen und lokal beheben.</small>
+<small>Konfliktmarker `<<<<<<<`, `=======`, `>>>>>>>` bereinigen; danach Build prüfen.</small>
 
 ---
 
-## GitHub + KI
+## GitHub + KI · natürliche Sprache
 
-> „Analysiere Issue #1, schlage einen Feature-Branch vor und bereite die Änderung in `demo/Program.cs` vor. Erkläre mir die Git-Befehle und erstelle keinen Merge ohne Freigabe.“
+> „Lies Issue #1, erstelle einen Feature-Branch und passe `demo/Program.cs` an. Zeige mir den Diff, schlage eine Commit-Message mit Issue-Referenz vor und bereite einen Pull Request vor. Nicht ohne meine Freigabe mergen.“
 
-**Prüfen:** Diff · Tests · Commit · Pull Request · Review
+**Möglicher Ablauf mit GitHub Copilot / Agent:**
 
-<small>KI-Aktionen hängen von Tool-Zugriff, Rechten und Freigaben ab.</small>
+**Anforderung → Codeänderung → Git-Befehle → PR-Entwurf**
+
+<small>Grenzen: Tool-Zugriff, Berechtigungen und Bestätigungen. Mensch prüft Diff, Build und Review.</small>
 
 ---
 
-# Live-Demo
+# Live-Demo · C#/.NET
 
-**C#-Konsole öffnen → Issue → Branch → Commit → PR → Review → Merge**
+**Issue → Clone → Branch → Code → Commit → Push → PR → Review → Merge**
 
-<small>Fragen?</small>
+<small>Bonus: absichtlichen Merge-Konflikt lösen und denselben Ablauf mit KI anstoßen.</small>
