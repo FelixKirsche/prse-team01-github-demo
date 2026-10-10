@@ -9,6 +9,19 @@
 
 ---
 
+## Lokales und Remote-Repository
+
+**Lokal (eigener PC)** ↔ **Remote (GitHub)**
+
+- `git clone`: Remote-Repository auf den PC kopieren
+- `git commit`: Änderungen **lokal** speichern
+- `git push`: lokale Commits zu GitHub hochladen
+- `git pull`: Änderungen von GitHub holen
+
+<small>`origin` bezeichnet üblicherweise das verknüpfte Remote-Repository.</small>
+
+---
+
 ## Werkzeuge für Git & GitHub
 
 - **Git CLI:** Befehle im Terminal (PowerShell, CMD, Bash)
@@ -45,7 +58,6 @@ git switch -c feature/hello-world
 git switch main
 # Klassische Alternative: git checkout main
 
-git status
 ```
 
 <small>`clone` = Repository herunterladen · `checkout` / `switch` = Branch bzw. Arbeitsstand wechseln</small>
@@ -79,7 +91,7 @@ git push -u origin feature/hello-world
 ```bash
 # Lokalen main nach dem Merge aktualisieren
 git switch main
-git pull --ff-only origin main
+git pull origin main
 ```
 
 <small>PR = nachvollziehbare Änderung mit Diskussion, Review und Merge-Historie</small>
