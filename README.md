@@ -34,7 +34,7 @@ Im Repository-Verzeichnis einen lokalen Webserver starten:
 python -m http.server 8000 --directory docs
 ```
 
-Anschließend `http://localhost:8000` öffnen. Die Reveal.js-Bibliotheken werden über ein CDN geladen; dafür ist eine Internetverbindung erforderlich.
+Anschließend `http://localhost:8000` öffnen.
 
 ## C#-Demo (`demo/`)
 
