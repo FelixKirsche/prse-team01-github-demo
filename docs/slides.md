@@ -112,7 +112,7 @@ git pull origin main
 
 ---
 
-## Merge-Konflikt live lösen
+## Merge-Konflikt lösen
 
 **Szenario:** Zwei Branches ändern dieselbe Zeile in `demo/Program.cs`.
 
