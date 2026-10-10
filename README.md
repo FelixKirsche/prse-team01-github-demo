@@ -1,67 +1,52 @@
 # PRSE Team 01 – GitHub Live-Demo
 
-## Empfehlung: Zwei Repositories
+Dieses Repository enthält die Präsentation und eine kleine C#-Konsolenanwendung für die Git-/GitHub-Demonstration von **Team 01** im Praktikum Software Engineering (JKU, WS 2026/27).
 
-1. **Offizielles PRSE-Team-Repository:** Java/JavaFX-Semesterprojekt, gemeinsame Issues und Releases. Namensvergabe und Zugriffsrechte mit der LV-Leitung abstimmen.
-2. **`prse-team01-github-demo`:** Präsentation und isolierte C#-Demo für den Termin am **16.10.2026**. Keine Übungscommits im Semesterprojekt.
+Die Präsentation wird mit **Reveal.js** aus einer Markdown-Datei gerendert und über **GitHub Pages** bereitgestellt. Die C#-Anwendung dient als eigenständiges Beispiel für Branches, Commits, Pull Requests und Merge-Konflikte.
 
-Das Vorjahresbeispiel ist [`jku-win-se/teaching-2026.ss.prse.braeuer.team4`](https://github.com/jku-win-se/teaching-2026.ss.prse.braeuer.team4). Daraus folgt **nicht automatisch**, dass ein neues Repo in dieser Organisation angelegt werden darf.
-
-## Projektstruktur
+## Repository-Struktur
 
 ```text
 prse-team01-github-demo/
-├── README.md
-├── docs/
-│   ├── index.html       # Reveal.js-Startseite (nur technische Hülle)
-│   ├── slides.md        # ALLE Präsentationsinhalte hier bearbeiten
-│   └── .nojekyll
-└── demo/
-    ├── Demo.csproj      # Minimales C#/.NET-Beispiel
-    └── Program.cs
+├── .gitignore           # Lokale und generierte Dateien von Git ausschließen
+├── README.md            # Dokumentation des Repositories
+├── docs/                # Präsentation und GitHub-Pages-Inhalte
+│   ├── .nojekyll        # Deaktiviert die Jekyll-Verarbeitung auf GitHub Pages
+│   ├── index.html       # Reveal.js-Einstiegspunkt, Theme und Plugins
+│   └── slides.md        # Präsentationsfolien in Markdown
+└── demo/                # C#-Anwendung für den GitHub-Workflow
+    ├── Demo.csproj      # .NET-10-Projektdatei
+    └── Program.cs       # Einstiegspunkt der Konsolenanwendung
 ```
 
-## GitHub Pages einrichten
+## Präsentation (`docs/`)
 
-1. Neues **öffentliches** Repository `prse-team01-github-demo` anlegen (GitHub Pages auf GitHub Free für öffentliche Repositories).
-2. Diese Dateien in den `main`-Branch pushen.
-3. **Settings → Pages → Build and deployment → Deploy from a branch** wählen.
-4. Branch **`main`**, Folder **`/docs`**, dann **Save**.
-5. Die URL lautet gewöhnlich `https://USERNAME.github.io/prse-team01-github-demo/` (bei Organisations-Repo entsprechend `ORG.github.io`).
+- **`slides.md`** enthält die Folien. `---` auf einer eigenen Zeile trennt zwei Folien.
+- **`index.html`** lädt Reveal.js, das Markdown-Plugin und die Darstellungseinstellungen.
+- **`.nojekyll`** sorgt dafür, dass GitHub Pages die Dateien ohne Jekyll verarbeitet.
 
-**Wichtig:** GitHub Pages veröffentlicht nur `docs/`. Änderungen im Ordner `demo/` sind vom Präsentationsinhalt getrennt. Pages-Builds können dennoch bei Pushes auf `main` ausgelöst werden; die Website bleibt durch die getrennten Inhalte stabil.
+### Lokal anzeigen
 
-## Präsentation bearbeiten
-
-Nur `docs/slides.md` ändern. Jede Zeile `---` trennt eine Folie. `docs/index.html` lädt Reveal.js und das Markdown-Plugin von CDN. Für lokale Vorschau einen HTTP-Server verwenden (direktes Öffnen per `file://` kann wegen Markdown-Fetch blockiert werden):
+Im Repository-Verzeichnis einen lokalen Webserver starten:
 
 ```bash
-python -m http.server 8000 -d docs
+python -m http.server 8000 --directory docs
 ```
 
-Dann `http://localhost:8000` öffnen. Internetzugang ist für die Reveal.js-CDN-Dateien nötig.
+Anschließend `http://localhost:8000` öffnen. Die Reveal.js-Bibliotheken werden über ein CDN geladen; dafür ist eine Internetverbindung erforderlich.
 
-## C#-Demo starten
+## C#-Demo (`demo/`)
 
-.NET 10 SDK installieren, dann:
+Das Verzeichnis enthält eine minimale **.NET-10-Konsolenanwendung**. Sie bildet die Grundlage für die praktische Demonstration von Git-Operationen, Issue-Verknüpfungen, Branches, Pull Requests und Merge-Konflikten.
+
+Voraussetzung: .NET 10 SDK.
 
 ```bash
 dotnet run --project demo/Demo.csproj
 ```
 
-## Ablauf am 16.10.2026
-
-1. Im **Demo-Repo** ein Issue erstellen, z. B. `#1 Begrüßung erweitern`.
-2. Repo klonen und `git switch -c feature/greeting` ausführen.
-3. `demo/Program.cs` ändern, `git add`, `git commit -m "Feature: extend greeting | refs #1 | time: 30m"`, `git push -u origin feature/greeting`.
-4. GitHub Pull Request öffnen, im PR-Text `Fixes #1` verlinken und Team-Review durchführen.
-5. Konflikt mit zwei Änderungen an derselben Codezeile vorbereiten und lokal auflösen; PR erst danach mergen.
-6. Optional KI zeigen: natürliche Sprache → Vorschlag für Änderungen und Git-Befehle; Diff und Berechtigungen kontrollieren.
-
-**Hinweis zur Aufgabenverteilung:** Für Team 01 sind Git-Workflows und KI gefragt. Der `time: 30m`-Tag ist ein Beispiel der separaten Time-Tracking-Vorgabe aus der LV (Team 02/05). Im eigentlichen Semesterprojekt gelten die Vorgaben der Lehrveranstaltung, insbesondere Java/JavaFX und Review-Workflow.
-
 ## Links
 
 - [Git herunterladen](https://git-scm.com/downloads)
-- [Reveal.js Dokumentation](https://revealjs.com/markdown/)
-- [GitHub Pages Dokumentation](https://docs.github.com/en/pages)
+- [Reveal.js – Markdown](https://revealjs.com/markdown/)
+- [GitHub Pages](https://docs.github.com/en/pages)
