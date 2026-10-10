@@ -94,18 +94,6 @@ git push -u origin feature/hello-world
 
 ---
 
-## Issues, User Stories & Tasks referenzieren
-
-| Syntax | Wirkung |
-|---|---|
-| `#1` | Issue verlinken |
-| `Refs #1` | Issue verlinken |
-| `Fixes #2` / `Closes #2` / `Resolves #2` | Issue automatisch schließen |
-
-<small>Automatisches Schließen erfolgt beim Merge in den Default-Branch (z. B. `main`).</small>
-
----
-
 ## Pull Request & Review
 
 1. Auf GitHub **Compare & pull request** auswählen
