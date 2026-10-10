@@ -98,11 +98,11 @@ git push -u origin feature/hello-world
 
 | Syntax | Bedeutung | Wirkung |
 |---|---|---|
-| `#1` | Direkte Referenz | Verlinkt Issue #1 |
-| `Refs #1` | Referenz | Verlinkt Issue #1 |
-| `Fixes #2` | Bug behoben | Schließt Issue #2 |
-| `Closes #3` | Task abgeschlossen | Schließt Issue #3 |
-| `Resolves #4` | Problem gelöst | Schließt Issue #4 |
+| `#1` | Direkte Referenz | Verlinkt Issue |
+| `Refs #1` | Referenz | Verlinkt Issue |
+| `Fixes #2` | Bug behoben | Schließt Issue |
+| `Closes #3` | Task abgeschlossen | Schließt Issue |
+| `Resolves #4` | Problem gelöst | Schließt Issue |
 
 **Commit-Message:** `git commit -m "Fix login validation (refs #1)"`
 
