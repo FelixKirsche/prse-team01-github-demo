@@ -1,0 +1,42 @@
+# .NET / C# build outputs
+**/bin/
+**/obj/
+**/out/
+**/TestResults/
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio / VS Code / Rider
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.rsuser
+*.sln.docstates
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet / local tooling
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# OS / temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+*~
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+**/appsettings.Development.json
+**/appsettings.Local.json
+secrets.json
+
+# Keep Reveal.js presentation sources in docs/ tracked
