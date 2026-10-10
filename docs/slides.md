@@ -5,11 +5,10 @@
 
 **PR Software Engineering · Team 01**
 
-<small>
-Felix Kirschner · Bernhard Traintinger
-
-Kathrin Reissner · Julian Günther
-</small>
+<p style="font-size: 24px; color: #94a3b8; line-height: 1.8;">
+  Felix Kirschner · Bernhard Traintinger<br>
+  Kathrin Reissner · Julian Günther
+</p>
 
 <small>16.10.2026</small>
 
