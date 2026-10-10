@@ -131,5 +131,3 @@ git push
 # Live-Demo · C#/.NET
 
 **Issue → Clone → Branch → Code → Commit → Push → PR → Review → Merge**
-
-<small>Bonus: absichtlichen Merge-Konflikt lösen und denselben Ablauf mit KI anstoßen.</small>
