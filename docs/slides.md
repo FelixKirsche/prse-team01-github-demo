@@ -96,19 +96,13 @@ git push -u origin feature/hello-world
 
 ## Issues, User Stories & Tasks referenzieren
 
-| Syntax | Bedeutung | Wirkung |
-|---|---|---|
-| `#1` | Direkte Referenz | Verlinkt Issue |
-| `Refs #1` | Referenz | Verlinkt Issue |
-| `Fixes #2` | Bug behoben | Schließt Issue |
-| `Closes #3` | Task abgeschlossen | Schließt Issue |
-| `Resolves #4` | Problem gelöst | Schließt Issue |
+| Syntax | Wirkung |
+|---|---|
+| `#1` | Issue verlinken |
+| `Refs #1` | Issue verlinken |
+| `Fixes #2` / `Closes #2` / `Resolves #2` | Issue automatisch schließen |
 
-**Commit-Message:** `git commit -m "Fix login validation (refs #1)"`
-
-**Pull-Request-Beschreibung:** `Closes #1`
-
-<small>`Refs` ist keine spezielle GitHub-Anweisung; `#1` erzeugt die Referenz. `Fixes`, `Closes` und `Resolves` bewirken das automatische Schließen beim Merge in den Default-Branch.</small>
+<small>Automatisches Schließen erfolgt beim Merge in den Default-Branch (z. B. `main`).</small>
 
 ---
 
