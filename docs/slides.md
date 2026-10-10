@@ -5,7 +5,13 @@
 
 **PR Software Engineering · Team 01**
 
-<small>Live-Demo mit C#/.NET · 16.10.2026</small>
+<small>
+Felix Kirschner · Bernhard Traintinger
+
+Kathrin Reissner · Julian Günther
+</small>
+
+<small>16.10.2026</small>
 
 ---
 
