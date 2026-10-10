@@ -71,7 +71,6 @@ git switch -c feature/hello-world
 # Zwischen bestehenden Branches wechseln
 git switch main
 # Klassische Alternative: git checkout main
-
 ```
 
 <small>`clone` = Repository herunterladen · `checkout` / `switch` = Branch bzw. Arbeitsstand wechseln</small>
@@ -92,6 +91,24 @@ git push -u origin feature/hello-world
 - `refs #1`: Commit verweist auf **Issue / User Story / Task #1**
 - `Fixes #1` im **Pull-Request-Text** schließt das Issue beim Merge nach `main`
 - `time: 30m`: Beispiel für das in der LV geforderte Zeit-Tag
+
+---
+
+## Issues, User Stories & Tasks referenzieren
+
+| Syntax | Bedeutung | Wirkung |
+|---|---|---|
+| `#1` | Direkte Referenz | Verlinkt Issue #1 |
+| `Refs #1` | Referenz | Verlinkt Issue #1 |
+| `Fixes #2` | Bug behoben | Schließt Issue #2 |
+| `Closes #3` | Task abgeschlossen | Schließt Issue #3 |
+| `Resolves #4` | Problem gelöst | Schließt Issue #4 |
+
+**Commit-Message:** `git commit -m "Fix login validation (refs #1)"`
+
+**Pull-Request-Beschreibung:** `Closes #1`
+
+<small>`Refs` ist keine spezielle GitHub-Anweisung; `#1` erzeugt die Referenz. `Fixes`, `Closes` und `Resolves` bewirken das automatische Schließen beim Merge in den Default-Branch.</small>
 
 ---
 
@@ -145,4 +162,3 @@ git push
 # Live-Demo · C#/.NET
 
 **Issue → Clone → Branch → Code → Commit → Push → PR → Review → Merge**
-
