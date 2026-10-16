@@ -16,5 +16,5 @@ string[] motivations =
 string motivation = motivations[Random.Shared.Next(motivations.Length)];
 
 Console.WriteLine();
-Console.WriteLine($"Hallo {name}!");
-Console.WriteLine($"Developer-Weisheit der Minute: {motivation}");
+Console.WriteLine($"Hallo {name}!!");
+Console.WriteLine($"Developer-Weisheit des Jahres: {motivation}");
